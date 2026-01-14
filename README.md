@@ -1,4 +1,4 @@
-<img width="1536" height="1024" alt="logo-sofiadao-png" src="https://github.com/user-attachments/assets/2cb8a078-598a-44a2-b370-7259d73cbd25" />
+<img width="768" height="512" alt="logo-sofiadao-png" src="https://github.com/user-attachments/assets/2cb8a078-598a-44a2-b370-7259d73cbd25" />
 
 # Bio-ClaudeCode
 
