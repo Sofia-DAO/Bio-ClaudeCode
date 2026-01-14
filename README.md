@@ -1,3 +1,5 @@
+<img width="1536" height="1024" alt="logo-sofiadao-png" src="https://github.com/user-attachments/assets/2cb8a078-598a-44a2-b370-7259d73cbd25" />
+
 # Bio-ClaudeCode
 
 Specialized Claude Code agents for bioinformatics and aging research workflows.
@@ -14,14 +16,14 @@ This repository is not primarily about Model Context Protocol (MCP) integrations
 
 ## Current Status
 
-**Version:** 2.0 (Released January 2026)
+**Version:** 0.1 (Released January 2026)
 
 **Agents:** 6 specialized workflow orchestrators
 **Commands:** 37 total (19 analysis + 4 QC + 4 visualization + 8 workflows + 2 general)
 **Integration Testing:** Data Analyst to Transcriptomics validated (86.2% coverage)
 **Status:** Production-ready for aging and longevity research
 
-## Agent Capabilities (Version 2.0)
+## Agent Capabilities (Version 0.1)
 
 All agents have been upgraded from knowledge assistants to workflow orchestrators with:
 
@@ -80,7 +82,7 @@ All agents have been upgraded from knowledge assistants to workflow orchestrator
 ```
 Bio-ClaudeCode/
 ├── .claude/
-│   ├── agents/                    # 6 specialized agents (Version 2.0)
+│   ├── agents/                    # 6 specialized agents (Version 0.1)
 │   │   ├── data-analysis/
 │   │   ├── literature/
 │   │   ├── genomics/
@@ -228,7 +230,7 @@ PubMed searches, systematic reviews, meta-analysis, evidence synthesis, citation
 
 **Phase 1: Foundation (Complete)**
 - Repository structure established
-- 6 agents Version 2.0 deployed
+- 6 agents Version 0.1 deployed
 - 37 commands implemented
 - Integration testing framework validated
 
@@ -342,4 +344,4 @@ Maintains compatibility with upstream claude-code-templates license.
 
 Built with focus on scientific rigor, reproducibility, and practical utility for aging and longevity research.
 
-Version 2.0 - January 2026
+Version 0.1 - 20260113
