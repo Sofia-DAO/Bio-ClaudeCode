@@ -265,3 +265,134 @@ Aim for 70%+ test coverage. Test critical paths and error handling.
 - **Secrets**: Never commit API keys (use environment variables)
 - **Paths**: Use relative paths for all project files
 - **Backwards compatibility**: Don't break existing component installations
+
+---
+
+## Integration Commands (Fase B - Added 2026-01-13)
+
+Bio-ClaudeCode now includes 5 specialized commands for multi-agent workflow orchestration and integration testing:
+
+### Workflow Management
+1. **`/workflow-create <name>`** - Define reusable multi-agent workflows
+   - Specify agent sequence, data bridges, validation checkpoints
+   - Save as YAML for repeated execution
+   - Enable production-ready pipeline automation
+
+2. **`/workflow-run <name> [options]`** - Execute saved workflows
+   - Automatic data bridging between agents
+   - Real-time progress tracking
+   - Checkpoint validation and error handling
+   - Resume failed workflows from any stage
+
+3. **`/workflow-list [--filter <agent>]`** - List available workflows
+   - View all saved workflow definitions
+   - Filter by agent, show execution history
+   - Validate workflow status
+
+### Integration Testing
+4. **`/integration-test <agent1> <agent2> [options]`** - Test agent integration
+   - Validate data format compatibility
+   - Test data bridge transformations
+   - Generate integration reports
+   - Save successful bridge configurations
+
+5. **`/data-bridge <source> <target> --transform <spec>`** - Manual data bridging
+   - Create custom data transformations
+   - Format conversion, column mapping, filtering
+   - Build reusable bridge library
+   - Validate transformations before execution
+
+### Use Cases
+- **Fase B Testing**: Validate multi-agent coordination
+- **Production Pipelines**: Deploy end-to-end research workflows
+- **Data Integration**: Bridge between different analysis stages
+- **Quality Assurance**: Test agent compatibility before deployment
+
+Total Commands: **37** (19 analysis + 4 QC + 4 visualization + 8 workflows + 2 general)
+
+---
+
+## Integration Testing (Added 2026-01-13)
+
+Bio-ClaudeCode agents can be coordinated into complete research pipelines through data bridges and workflow orchestration.
+
+### Integration Commands
+
+Five specialized commands enable multi-agent workflow testing:
+
+1. **`/workflow-create <name>`** - Define reusable multi-agent workflows
+2. **`/workflow-run <name> [options]`** - Execute saved workflows  
+3. **`/workflow-list [--filter <agent>]`** - List available workflows
+4. **`/integration-test <agent1> <agent2>`** - Test agent pair integration
+5. **`/data-bridge <source> <target>`** - Manual data transformation
+
+### Validated Integrations
+
+**Data Analyst → Transcriptomics Analyst** (Validated 2026-01-13)
+- Workflow: DESeq2 differential expression to pathway enrichment
+- Data bridge: Gene ID mapping to standard symbols
+- Results: 86.2% coverage, 11 significant pathways identified
+- Status: Production ready
+
+### Quick Start
+
+Test an integration:
+```bash
+/integration-test data-analyst transcriptomics-analyst --data test_data/
+```
+
+Create a workflow:
+```bash
+/workflow-create rnaseq-pipeline \
+  --agents data-analyst,transcriptomics-analyst \
+  --bridge transform_deseq_to_pathway.py
+```
+
+Run workflow:
+```bash
+/workflow-run rnaseq-pipeline --input deseq2_results.csv
+```
+
+### Documentation
+
+- **Integration Guide:** `docs/INTEGRATION_TESTING.md`
+- **Example Bridges:** `examples/data-bridges/`
+- **Test Cases:** `/Testes/teste07/` (external to repository)
+
+### Data Bridge Example
+
+See `examples/data-bridges/deseq2_to_pathway.py` for complete implementation of DESeq2 to pathway enrichment transformation.
+
+Key features:
+- Input validation
+- Gene ID mapping
+- Coverage statistics
+- Quality metrics
+
+### Integration Patterns
+
+**Pattern 1: Sequential Pipeline**
+- Agent A output becomes Agent B input
+- Example: RNA-seq to Pathway to Drug Discovery
+
+**Pattern 2: Parallel Validation**  
+- Multiple agents analyze same data independently
+- Example: Literature validates Genomics findings
+
+**Pattern 3: Iterative Refinement**
+- Agent output fed back for refinement cycles
+- Example: Drug design with ADMET feedback
+
+### Testing Strategy
+
+1. Unit test data bridges with `--validate-only`
+2. Integration test with synthetic data using `--generate-data`
+3. Production test with real data
+
+### Performance Metrics
+
+- **Mapping coverage:** Percentage of successfully mapped entities
+- **Data integrity:** Percentage of preserved information  
+- **Workflow completion:** Successful runs / total runs
+- **Biological validity:** Expert review of findings
+
